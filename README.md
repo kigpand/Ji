@@ -52,7 +52,7 @@ const timecontroller = (flag) =>{  // flag의 값에 따라 fadeIn,Out 구분
 ```
 
 * html data속성으로 클릭하는 menu로 뷰 이동
-<img src ="https://user-images.githubusercontent.com/70279943/103476955-5569e500-4dfd-11eb-830d-52c7c29b0b68.PNG" width = "200px" />
+<img src ="https://user-images.githubusercontent.com/70279943/103476955-5569e500-4dfd-11eb-830d-52c7c29b0b68.PNG" width = "300px" />
 ```js
 navBtn.addEventListener("click",(event)=>{
     const target = event.target;
