@@ -59,50 +59,16 @@ const timecontroller = (flag) =>{
     }
 }
 
-const playFade =() =>{
-    fadeIn();
-}
-
-const openingFade = () =>{
+window.addEventListener("scroll",()=>{
     const openingImg = document.querySelector(".opening_img");
     openingImg.style.opacity = 1 - window.scrollY / window.innerHeight;
-}
 
-const aboutAnimation = () =>{
-    const introPicture = document.querySelector(".about_intro_picture");
-    const introContent = document.querySelector(".about_intro_content");
-
-    if(window.scrollY>=1300 && window.scrollY<=2100){
-
-        introPicture.classList.remove("close");
-        introContent.classList.remove("close");
-
-        introPicture.classList.add("extend");
-        introContent.classList.add("extend");
-    }
-    else{
-        introPicture.classList.remove("extend");
-        introContent.classList.remove("extend");
-
-        introPicture.classList.add("close");
-        introContent.classList.add("close");
-    }
-}
-
-const navVisible = () =>{
     if(window.scrollY>=opening.offsetHeight){
         navBtn.style.visibility = "visible";
     }
     else{
         navBtn.style.visibility = "hidden";
     }
-}
-
-window.addEventListener("scroll",()=>{
-    // 메뉴바 상태
-    navVisible();
-    openingFade();
-    aboutAnimation();
 })
 
 navBtn.addEventListener("click",(event)=>{
@@ -118,9 +84,7 @@ navBtn.addEventListener("click",(event)=>{
 
 openingImg.addEventListener("click",()=>{
     const scroll = document.querySelector("#home");
-    scroll.scrollIntoView({behavior:"smooth"});
+    scroll.scrollIntoView({ behavior: "smooth" });
 })
 
-
-
-playFade();
+fadeIn();
