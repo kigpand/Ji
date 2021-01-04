@@ -17,15 +17,15 @@ const fadeOut = () =>{
     let count = 1;
     const flag = false;
     const fadeOutIntervel = setInterval(()=>{
-        HomeImg.style.opacity -= 0.03;
-        HomeText.style.opacity -= 0.03;
+        HomeImg.style.opacity -= 0.05;
+        HomeText.style.opacity -= 0.05;
         count -= 0.03;
-        if(count<0){
+        if(count<=0){
             HomeArrayCount++;
             clearInterval(fadeOutIntervel);
             timecontroller(flag);
         }
-    },100);
+    },80);
 }
 
 const fadeIn = () =>{
@@ -37,14 +37,14 @@ const fadeIn = () =>{
     const flag = true;
     let float = parseFloat(HomeImg.style.opacity);
     const fadeInIntervel = setInterval(()=>{
-        float+= 0.03;
+        float+= 0.05;
         HomeImg.style.opacity = float;
         HomeText.style.opacity = float;
-        if(float>1){
+        if(float>=1){
             clearInterval(fadeInIntervel);
             timecontroller(flag);
         }
-    },100);
+    },80);
 
 }
 
@@ -52,7 +52,7 @@ const timecontroller = (flag) =>{
     if(flag === true){
         setTimeout(()=>{
             fadeOut();
-        },2000)
+        },1000)
     }
     else{
         fadeIn();
