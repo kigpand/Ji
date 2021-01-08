@@ -11,12 +11,94 @@ const openingImg = document.querySelector(".opening_check_img");
 
 let HomeArrayCount = 0;
 
-const fadeOut = () =>{
+// ------------------------------ Arrow Function Script -----------------------------------------
+// const fadeOut = () =>{
+//     HomeImg.style.opacity = 1;
+//     HomeText.style.opacity = 1;
+//     let count = 1;
+//     const flag = false;
+//     const fadeOutIntervel = setInterval(()=>{
+//         HomeImg.style.opacity -= 0.05;
+//         HomeText.style.opacity -= 0.05;
+//         count -= 0.03;
+//         if(count<=0){
+//             HomeArrayCount++;
+//             clearInterval(fadeOutIntervel);
+//             timecontroller(flag);
+//         }
+//     },80);
+// }
+
+// const fadeIn = () =>{
+//     if(HomeArrayCount>HomeImgArray.length-1){ HomeArrayCount = 0};
+//     HomeImg.src = HomeImgArray[HomeArrayCount];
+//     HomeText.innerHTML = HomeTextArray[HomeArrayCount];
+//     HomeImg.style.opacity = 0;
+//     HomeText.style.opacity = 0;
+//     const flag = true;
+//     let float = parseFloat(HomeImg.style.opacity);
+//     const fadeInIntervel = setInterval(()=>{
+//         float+= 0.05;
+//         HomeImg.style.opacity = float;
+//         HomeText.style.opacity = float;
+//         if(float>=1){
+//             clearInterval(fadeInIntervel);
+//             timecontroller(flag);
+//         }
+//     },80);
+
+// }
+
+// const timecontroller = (flag) =>{
+//     if(flag === true){
+//         setTimeout(()=>{
+//             fadeOut();
+//         },1000)
+//     }
+//     else{
+//         fadeIn();
+//     }
+// }
+
+// window.addEventListener("scroll",()=>{
+//     const openingImg = document.querySelector(".opening_img");
+//     console.log("스크롤");
+//     openingImg.style.opacity = 1 - window.scrollY / window.innerHeight;
+//     if(window.scrollY>=opening.offsetHeight){
+//         navBtn.style.visibility = "visible";
+//     }
+//     else{
+//         navBtn.style.visibility = "hidden";
+//     }
+// })
+
+// navBtn.addEventListener("click",(event)=>{
+//     const target = event.target;
+//     const link = target.dataset.link;
+//     if(!link){
+//         return;
+//     }else{
+//         const scroll = document.querySelector(link);
+//         scroll.scrollIntoView({ behavior : "smooth" });
+//     }
+// })
+
+// openingImg.addEventListener("click",()=>{
+//     const scroll = document.querySelector("#home");
+//     scroll.scrollIntoView({ behavior: "smooth" });
+// })
+
+
+// fadeIn();
+
+// --------------------------------------------------------------------------------
+
+function fadeOut(){
     HomeImg.style.opacity = 1;
     HomeText.style.opacity = 1;
     let count = 1;
     const flag = false;
-    const fadeOutIntervel = setInterval(()=>{
+    const fadeOutIntervel = setInterval(function(){
         HomeImg.style.opacity -= 0.05;
         HomeText.style.opacity -= 0.05;
         count -= 0.03;
@@ -28,7 +110,7 @@ const fadeOut = () =>{
     },80);
 }
 
-const fadeIn = () =>{
+function fadeIn(){
     if(HomeArrayCount>HomeImgArray.length-1){ HomeArrayCount = 0};
     HomeImg.src = HomeImgArray[HomeArrayCount];
     HomeText.innerHTML = HomeTextArray[HomeArrayCount];
@@ -36,7 +118,7 @@ const fadeIn = () =>{
     HomeText.style.opacity = 0;
     const flag = true;
     let float = parseFloat(HomeImg.style.opacity);
-    const fadeInIntervel = setInterval(()=>{
+    const fadeInIntervel = setInterval(function(){
         float+= 0.05;
         HomeImg.style.opacity = float;
         HomeText.style.opacity = float;
@@ -45,12 +127,11 @@ const fadeIn = () =>{
             timecontroller(flag);
         }
     },80);
-
 }
 
-const timecontroller = (flag) =>{
+function timecontroller(flag){
     if(flag === true){
-        setTimeout(()=>{
+        setTimeout(function(){
             fadeOut();
         },1000)
     }
@@ -59,11 +140,10 @@ const timecontroller = (flag) =>{
     }
 }
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll",function(){
     const openingImg = document.querySelector(".opening_img");
-    openingImg.style.opacity = 1 - window.scrollY / window.innerHeight;
-
-    if(window.scrollY>=opening.offsetHeight){
+    openingImg.style.opacity = 1 - window.pageYOffset / window.innerHeight;
+    if(window.window.pageYOffset>=opening.offsetHeight){
         navBtn.style.visibility = "visible";
     }
     else{
@@ -71,7 +151,7 @@ window.addEventListener("scroll",()=>{
     }
 })
 
-navBtn.addEventListener("click",(event)=>{
+navBtn.addEventListener("click",function(event){
     const target = event.target;
     const link = target.dataset.link;
     if(!link){
@@ -82,7 +162,7 @@ navBtn.addEventListener("click",(event)=>{
     }
 })
 
-openingImg.addEventListener("click",()=>{
+openingImg.addEventListener("click",function(){
     const scroll = document.querySelector("#home");
     scroll.scrollIntoView({ behavior: "smooth" });
 })
