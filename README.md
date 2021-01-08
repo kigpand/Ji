@@ -66,3 +66,5 @@ navBtn.addEventListener("click",(event)=>{
     }
 })
 ```
+
+###  2021-01-08 익스플로러 지원 적용
